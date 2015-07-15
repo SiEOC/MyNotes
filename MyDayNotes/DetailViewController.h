@@ -10,4 +10,10 @@
 
 @interface DetailViewController : UIViewController
 
+- (void)navEditbutton;
+
+- (void)navAddButton;
+
+- (void)navTitleGestureMethod;
+
 @end

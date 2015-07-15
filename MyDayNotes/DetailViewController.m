@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MyListViewController.h"
 
 @interface DetailViewController ()
 
@@ -14,8 +15,48 @@
 
 @implementation DetailViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
+- (void)viewDidLoad
+{
+  
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
+    UILabel * titleView = [UILabel new];
+    titleView.text = @"Notes";
+    titleView.textColor = [UIColor redColor];
+    [titleView sizeToFit];
+    titleView.userInteractionEnabled = YES;
+    [titleView addGestureRecognizer:tapGesture];
+    
+    self.navigationItem.titleView = titleView;
+    [self.navigationController.navigationBar setTranslucent:NO];
+
+  
+    /* Adding Butotons To  Left Nav Bar Item @ View Controller  */
+    
+    UIBarButtonItem *removeButton = [[UIBarButtonItem alloc]
+                                      initWithTitle:@"Back"
+                                      style:UIBarButtonItemStylePlain
+                                      target:self
+                                      action:@selector(leftMethod)]; 
+    [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
+    
+
+    /*   Right Nav Button  @ View Controller  */
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Save"
+                                  style:UIBarButtonItemStylePlain
+                                  target:self
+                                  action:@selector(rightMethod)];
+    
+    [self.navigationItem setRightBarButtonItem:addButton animated:YES];
+    
+
+    /*      Color For View Controller */
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
+    
+[super viewDidLoad];
     // Do any additional setup after loading the view.
 }
 
@@ -24,14 +65,34 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)navEditbutton
+{
+    NSLog(@"Edit Button");
+    
+    //  ActionSheet or drop down
+    
+    //  Remove Entry
 }
-*/
+
+-(void)navAddButton
+{
+    NSLog(@"Add Button");
+    //  Present DetailViewContorller
+    
+    
+//    DetailViewController *toDetailVC = [[DetailViewController alloc] init];
+    MyListViewController *toMyListVC = [[MyListViewController alloc] init];
+    
+    [self presentViewController:toMyListVC animated:YES completion:nil];
+}
+
+-(void)navTitleGestureMethod
+{
+    NSLog(@"Title Gesture");
+}
+
+
+
 
 @end
