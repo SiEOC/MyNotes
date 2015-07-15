@@ -23,7 +23,7 @@ static NSString* const AllNotesKey = @"allNotes";
     static NotesController *sharedInstance = nil;
     static dispatch_once_t onceInit;
     dispatch_once(&onceInit, ^{ sharedInstance = [NotesController new];
-//        [sharedInstance loadFromPersistentStorage];
+        [sharedInstance loadFromPersistentStorage];
     });
     return sharedInstance;
 }
@@ -40,18 +40,32 @@ static NSString* const AllNotesKey = @"allNotes";
 }
 
 
-
+- (void)loadFromPersistentStorage
+{
+    
+    NSArray *notesTakenDictionaries = [NSArray arrayWithContentsOfFile:self.pathToFile];
+    NSMutableArray *secondArrayMutable = [NSMutableArray new];
+    
+    
+    for (NSDictionary *notesM in notesTakenDictionaries)
+    {
+        [secondArrayMutable addObject:[[Notes alloc] initWithDictionary:notesM]];
+    }
+    
+//    self.notesArray = secondArrayMutable; Read only Error :(
+    
+}
 
 - (void)addingNotes:(Notes *)notes
 {
-    if (!notes) {
+    if (!notes)
+    {
         return;
     }
     
     NSMutableArray *mutableManyNotes = self.notesArray.mutableCopy;
     [mutableManyNotes addObject:notes];
     
-//    self.notesArray = mutableManyNotes;
     [self saveToPersistentStorage];
 }
 
@@ -72,5 +86,20 @@ static NSString* const AllNotesKey = @"allNotes";
 - (void)saveNotes
 {
     [self saveToPersistentStorage];
+
+}
+
+- (NSString *)pathToFile
+{
+    //Creating a file path:
+    //1) Search for the app's documents directory (copy+paste from Documentation)
+    
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    
+    //2) Create the full file path by appending the desired file name
+    NSString *pathToFile = [documentsDirectory stringByAppendingPathComponent:@"entries.plist"]; // No plist CoreData unless...
+    
+    return pathToFile;
 }
 @end
