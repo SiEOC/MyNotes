@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "MyListViewController.h"
+#import "NotesController.h"
 
 @interface DetailViewController ()
 
@@ -80,20 +81,35 @@
 
 -(void)saveDone
 {
+    if (self.detailNotes)
+    {
+        self.detailNotes.title = self.titleTextField.text;
+        self.detailNotes.bodyText = self.bodyTextField.text;
+        self.detailNotes.timestamp = [NSDate date]; // Else it will not be legit
+    }
+    else
+    {
+        self.detailNotes = [[NotesController sharedInstance] createNotesWithTitle:self.titleTextField.text bodyText:self.bodyTextField];
+        
+                            [[NotesController sharedInstance] saveNotes];
+        
+    }
+    
     NSLog(@"Back & Save Button");
     
-    //  ActionSheet or drop down
     
-    //  Remove Entry
+    
+    [self dismissViewControllerAnimated:self completion:nil];
+     //  ActionSheet or drop down
+    //   Remove Entry
+    
+    
 }
 
 -(void)addPhoto
 {
     NSLog(@"Add Image Button");
-    //  Present DetailViewContorller
     
-    
-//    DetailViewController *toDetailVC = [[DetailViewController alloc] init];
     MyListViewController *toMyListVC = [[MyListViewController alloc] init];
     
     [self presentViewController:toMyListVC animated:YES completion:nil];

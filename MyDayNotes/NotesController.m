@@ -32,9 +32,9 @@ static NSString* const AllNotesKey = @"allNotes";
 - (Notes *)createNotesWithTitle:(NSString *)title bodyText:(NSString *)bodyText
 {
     Notes *newNotes = [Notes new];
-//    newNotes.title = title;
-//    newNotes.bodyText = bodyText;
-//    [self addingNotes:newNotes];
+    newNotes.title = title;
+    newNotes.bodyText = bodyText;  // Here
+    [self addingNotes:newNotes];
     return newNotes;
 
 }
@@ -59,30 +59,15 @@ static NSString* const AllNotesKey = @"allNotes";
 
 - (void)saveToPersistentStorage  /*  See Here  */
 {
-    NSMutableArray *noteDictionary = [NSMutableArray new];
-//    for (Notes *notes in self.entries)
-    {
-//        [noteDictionary addObject:[notes dictionaryRepresentation]];
-    }
-    
-//    [noteDictionary writeToFile:self.pathToFile atomically:YES];
+
 }
-
-//- (void)loadFromPersistentStorage
-//{
-//    
-//    NSArray *noteDictionaries = [NSArray arrayWithContentsOfFile:self.pathToFile];
-//    
-//    NSMutableArray *notes = [NSMutableArray new];
-//    for (NSDictionary *notes in noteDictionaries)
-//    {
-//        [?? addObject:[[Notes alloc] initWithDictionary:notes]];
-//    }
-//    
-//    self.notesArray = ;
-//}
-
 #pragma mark - Update
+
+
+- (void)removingNotes:(Notes*)notes
+{
+    NSLog(@"Remove");
+}
 
 - (void)saveNotes
 {
