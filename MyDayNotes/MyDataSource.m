@@ -12,33 +12,29 @@
 
 @implementation MyDataSource
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 7;
-}
-
--(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
-{
-    return nil;
-}
-
-//- (MyListViewController *)listView:(MyListViewController *)listView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+//-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 //{
-//    MyListViewController *cell = [listView dequeueReusableCellWithIdentifier:@"MyID"];
+//    return 7;
+//}
+//
+//-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
+//{
+//    return nil;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 //    
-//    if (cell == nil)
-//    {
-//        
-//        /* Creates a new cell */
-//        
-//        cell = [[MyListViewController alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"MyIdentifier"];
-//        
-//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
-//        
-//    }
-//
-//
+//    Entry *entry = [EntryController sharedInstance].entries[indexPath.row];
+//    
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"entryCell"];
+//    cell.textLabel.text = entry.title;
+//    
 //    return cell;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+//{
+//    return [NotesController sharedInstance].entries.count;
 //}
 
 @end
