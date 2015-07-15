@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MyListViewController : UIViewController
 
+@property (nonatomic,strong)MyListViewController *listView;
+
 @end
+
