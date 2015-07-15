@@ -10,7 +10,7 @@
 #import "Notes.h"
 
 @interface NotesController : NSObject
-@property (strong, nonatomic, readonly) NSArray *notesArray;
+@property (strong, nonatomic,) NSArray *notesArray;
 
 + (NotesController *)sharedInstance;
 

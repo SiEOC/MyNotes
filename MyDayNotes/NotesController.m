@@ -39,6 +39,42 @@ static NSString* const AllNotesKey = @"allNotes";
 
 }
 
+- (void)addingNotes:(Notes *)notes
+{
+    if (!notes)
+    {
+        return;
+    }
+    
+    NSMutableArray *mutableManyNotes = self.notesArray.mutableCopy;
+    [mutableManyNotes addObject:notes];
+    
+    self.notesArray = mutableManyNotes;
+    [self saveToPersistentStorage];
+}
+
+
+- (void)removingNotes:(Notes*)notes
+{
+    NSLog(@"Remove");
+    
+    
+    if (!notes)
+    {
+        return;
+    }
+    
+    NSMutableArray *mutableNotes = self.notesArray.mutableCopy;   /*  See Here  */
+    [mutableNotes removeObject:notes];
+    
+    self.notesArray = mutableNotes; // readonly
+    [self saveToPersistentStorage];
+}
+
+- (void)saveToPersistentStorage  /*  See Here  */
+{
+    
+}
 
 - (void)loadFromPersistentStorage
 {
@@ -51,36 +87,7 @@ static NSString* const AllNotesKey = @"allNotes";
     {
         [secondArrayMutable addObject:[[Notes alloc] initWithDictionary:notesM]];
     }
-    
-//    self.notesArray = secondArrayMutable; Read only Error :(
-    
-}
-
-- (void)addingNotes:(Notes *)notes
-{
-    if (!notes)
-    {
-        return;
-    }
-    
-    NSMutableArray *mutableManyNotes = self.notesArray.mutableCopy;
-    [mutableManyNotes addObject:notes];
-    
-    [self saveToPersistentStorage];
-}
-
-#pragma mark - Read
-
-- (void)saveToPersistentStorage  /*  See Here  */
-{
-
-}
-#pragma mark - Update
-
-
-- (void)removingNotes:(Notes*)notes
-{
-    NSLog(@"Remove");
+    self.notesArray = secondArrayMutable;
 }
 
 - (void)saveNotes
@@ -98,7 +105,7 @@ static NSString* const AllNotesKey = @"allNotes";
     NSString *documentsDirectory = [paths objectAtIndex:0];
     
     //2) Create the full file path by appending the desired file name
-    NSString *pathToFile = [documentsDirectory stringByAppendingPathComponent:@"entries.plist"]; // No plist CoreData unless...
+    NSString *pathToFile = [documentsDirectory stringByAppendingPathComponent:@"entries.plist"];
     
     return pathToFile;
 }
