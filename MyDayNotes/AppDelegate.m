@@ -21,7 +21,7 @@
 
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[MyListViewController new]];
     
-    self.window.backgroundColor = [UIColor clearColor];
+    self.window.backgroundColor = [UIColor colorWithRed:120 green:0 blue:0 alpha:0.35];
     [self.window makeKeyAndVisible];
     return YES;
 }

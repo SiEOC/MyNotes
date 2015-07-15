@@ -21,6 +21,8 @@
 
 - (void)viewDidLoad
 {
+    
+    [super viewDidLoad];
   
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
@@ -60,7 +62,7 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     
-[super viewDidLoad];
+
     
     [self updateWithNotes:self.detailNotes];
     
