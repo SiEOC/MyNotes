@@ -47,9 +47,11 @@ static NSString* const AllNotesKey = @"allNotes";
     }
     
     NSMutableArray *mutableManyNotes = self.notesArray.mutableCopy;
+    
     [mutableManyNotes addObject:notes];
     
     self.notesArray = mutableManyNotes;
+    
     [self saveToPersistentStorage];
 }
 
@@ -66,8 +68,8 @@ static NSString* const AllNotesKey = @"allNotes";
     
     NSMutableArray *mutableNotes = self.notesArray.mutableCopy;   /*  See Here  */
     [mutableNotes removeObject:notes];
-    
-    self.notesArray = mutableNotes; // readonly
+#warning ReadOnly Was Notes Array. 
+    self.notesArray = mutableNotes;
     [self saveToPersistentStorage];
 }
 
