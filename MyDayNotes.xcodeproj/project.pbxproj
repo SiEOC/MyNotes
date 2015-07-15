@@ -95,18 +95,12 @@
 			isa = PBXGroup;
 			children = (
 				06CFD7B51B569398001BC735 /* AppDelegate */,
-				06CFD7A51B5686FD001BC735 /* MyListViewController.h */,
-				06CFD7A61B5686FD001BC735 /* MyListViewController.m */,
-				06CFD7B61B5696F6001BC735 /* MyDataSource.h */,
-				06CFD7B71B5696F6001BC735 /* MyDataSource.m */,
-				06CFD7AB1B568776001BC735 /* DetailViewController.h */,
-				06CFD7AC1B568776001BC735 /* DetailViewController.m */,
-				06CFD7861B568680001BC735 /* ViewController.h */,
-				06CFD7871B568680001BC735 /* ViewController.m */,
-				06CFD7AE1B568889001BC735 /* Notes.h */,
-				06CFD7AF1B568889001BC735 /* Notes.m */,
-				06CFD7B11B5688B5001BC735 /* NotesController.h */,
-				06CFD7B21B5688B5001BC735 /* NotesController.m */,
+				06CFD7F21B56DA0B001BC735 /* ViewController */,
+				06CFD7F11B56D9FC001BC735 /* DataSource */,
+				06CFD7F41B56DA5C001BC735 /* DetailViewController */,
+				06CFD7F51B56DA77001BC735 /* Notes */,
+				06CFD7F61B56DA86001BC735 /* Note Controller */,
+				06CFD7F31B56DA44001BC735 /* Non MVP */,
 				06CFD78C1B568680001BC735 /* Images.xcassets */,
 				06CFD78E1B568680001BC735 /* LaunchScreen.xib */,
 				06CFD77F1B568680001BC735 /* Supporting Files */,
@@ -147,6 +141,60 @@
 				06CFD7841B568680001BC735 /* AppDelegate.m */,
 			);
 			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		06CFD7F11B56D9FC001BC735 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7B61B5696F6001BC735 /* MyDataSource.h */,
+				06CFD7B71B5696F6001BC735 /* MyDataSource.m */,
+			);
+			name = DataSource;
+			sourceTree = "<group>";
+		};
+		06CFD7F21B56DA0B001BC735 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7A51B5686FD001BC735 /* MyListViewController.h */,
+				06CFD7A61B5686FD001BC735 /* MyListViewController.m */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		06CFD7F31B56DA44001BC735 /* Non MVP */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7871B568680001BC735 /* ViewController.m */,
+				06CFD7861B568680001BC735 /* ViewController.h */,
+			);
+			name = "Non MVP";
+			sourceTree = "<group>";
+		};
+		06CFD7F41B56DA5C001BC735 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7AB1B568776001BC735 /* DetailViewController.h */,
+				06CFD7AC1B568776001BC735 /* DetailViewController.m */,
+			);
+			name = DetailViewController;
+			sourceTree = "<group>";
+		};
+		06CFD7F51B56DA77001BC735 /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7AE1B568889001BC735 /* Notes.h */,
+				06CFD7AF1B568889001BC735 /* Notes.m */,
+			);
+			name = Notes;
+			sourceTree = "<group>";
+		};
+		06CFD7F61B56DA86001BC735 /* Note Controller */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7B11B5688B5001BC735 /* NotesController.h */,
+				06CFD7B21B5688B5001BC735 /* NotesController.m */,
+			);
+			name = "Note Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

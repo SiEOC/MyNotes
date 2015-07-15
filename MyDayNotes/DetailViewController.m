@@ -11,6 +11,9 @@
 
 @interface DetailViewController ()
 
+@property (nonatomic,strong)UITextField *titleTextField;
+@property (nonatomic, strong) UITextField *bodyTextField;
+
 @end
 
 @implementation DetailViewController
@@ -33,20 +36,20 @@
     /* Adding Butotons To  Left Nav Bar Item @ View Controller  */
     
     UIBarButtonItem *removeButton = [[UIBarButtonItem alloc]
-                                      initWithTitle:@"Back"
+                                      initWithTitle:@"Done"
                                       style:UIBarButtonItemStylePlain
                                       target:self
-                                      action:@selector(leftMethod)]; 
+                                      action:@selector(navEditbutton)];
     [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
     
 
     /*   Right Nav Button  @ View Controller  */
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"Save"
+                                  initWithTitle:@"Photo+"
                                   style:UIBarButtonItemStylePlain
                                   target:self
-                                  action:@selector(rightMethod)];
+                                  action:@selector(navAddButton)];
     
     [self.navigationItem setRightBarButtonItem:addButton animated:YES];
     
@@ -57,8 +60,11 @@
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     
 [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self updateWithNotes:self.detailNotes];
+    
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -66,18 +72,24 @@
 }
 
 
--(void)navEditbutton
+- (void)updateWithNotes:(Notes *)detailNotes
 {
-    NSLog(@"Edit Button");
+    self.titleTextField.text = detailNotes.title;
+    self.bodyTextField.text = detailNotes.bodyText;
+}
+
+-(void)saveDone
+{
+    NSLog(@"Back & Save Button");
     
     //  ActionSheet or drop down
     
     //  Remove Entry
 }
 
--(void)navAddButton
+-(void)addPhoto
 {
-    NSLog(@"Add Button");
+    NSLog(@"Add Image Button");
     //  Present DetailViewContorller
     
     
@@ -87,7 +99,7 @@
     [self presentViewController:toMyListVC animated:YES completion:nil];
 }
 
--(void)navTitleGestureMethod
+-(void)newGestureMethod
 {
     NSLog(@"Title Gesture");
 }

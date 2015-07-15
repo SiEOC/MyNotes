@@ -7,13 +7,23 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Notes.h"
 
 @interface DetailViewController : UIViewController
 
-- (void)navEditbutton;
 
-- (void)navAddButton;
 
-- (void)navTitleGestureMethod;
+@property (strong, nonatomic) Notes *detailNotes;
+
+
+
+
+- (void)updateWithNotes:(Notes *)detailNotes;
+
+- (void)saveDone;
+
+- (void)addPhoto;
+
+- (void)newGestureMethod;
 
 @end

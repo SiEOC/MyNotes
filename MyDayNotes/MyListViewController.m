@@ -93,9 +93,9 @@
     //  Present DetailViewContorller
     
     
-    DetailViewController *toDetailVC = [[DetailViewController alloc] init];
-    
-    [self.listView presentViewController:toDetailVC animated:YES completion:nil];
+//    DetailViewController *toDetailVC = [[DetailViewController alloc] init];
+//    
+//    [self.listView presentViewController:toDetailVC animated:YES completion:nil];
 }
 
 -(void)navTitleGestureMethod
