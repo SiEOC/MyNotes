@@ -16,7 +16,7 @@
 @property (strong, nonatomic) Notes *detailNotes;
 
 
-
+-(void)removeNotesWritten;
 
 - (void)updateWithNotes:(Notes *)detailNotes;
 

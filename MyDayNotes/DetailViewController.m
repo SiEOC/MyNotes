@@ -66,12 +66,7 @@
     
 }
 
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
+#pragma My Methods
 
 - (void)updateWithNotes:(Notes *)detailNotes
 {
@@ -95,15 +90,26 @@
         
     }
     
-    NSLog(@"Back & Save Button");
-    
+    NSLog(@"Back & Save Button");  /* ActionSheet or drop down ,Remove.. */
     
     
     [self dismissViewControllerAnimated:self completion:nil];
-     //  ActionSheet or drop down
-    //   Remove Entry
+
+}
+
+-(void)removeNotesWritten
+{
+    self.titleTextField = @"";
+    self.title = @"";
+    self.bodyTextField = @"";
     
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
     
+    return YES;
 }
 
 -(void)addPhoto
@@ -121,6 +127,12 @@
 }
 
 
+
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
 
 
 @end
