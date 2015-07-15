@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 Skyler Clark. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-@interface MyDataSource : UIViewController
+@interface MyDataSource : NSObject <UITableViewDataSource>
 
 @end

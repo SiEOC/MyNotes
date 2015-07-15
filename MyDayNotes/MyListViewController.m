@@ -13,6 +13,8 @@
 @end
 
 @implementation MyListViewController
+
+
 - (void)viewDidAppear:(BOOL)animated  // As of rght Now view Did load is not 'respndig'  "viee will appear is.. :)
 {
     
@@ -47,26 +49,12 @@
     
     self.listView = self;
 
-    
-//    self.listView = [[MyListViewController alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
-//    self.listView.delegate = self;
-//    self.tableView.dataSource = self.dataSource;
-//    [self.view addSubview:self.tableView];
-    
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-//
-//    TitleDetailViewController *detailViewController = [TitleDetailViewController new];
-//    detailViewController.titleString = [self.dataSource titleAtIndexPath:indexPath];
-//    [self.navigationController pushViewController:detailViewController animated:YES];
-
-//
-//}
-//- (void)didReceiveMemoryWarning {
-//    [super didReceiveMemoryWarning];
-//    // Dispose of any resources that can be recreated.
-//}
+- (void)viewWillAppear:(BOOL)animated
+{
+//    [self.listView reloadData]; addDataSource
+}
 
 
 

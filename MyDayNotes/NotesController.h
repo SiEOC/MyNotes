@@ -7,7 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Notes.h"
 
 @interface NotesController : NSObject
+@property (strong, nonatomic, readonly) NSArray *notesArray;
+
++ (NotesController *)sharedInstance;
+
+- (Notes *)createNotesWithTitle:(NSString *)title bodyText:(NSString *)bodyText;
+
+- (void)addingNotes:(Notes *)notes;
+- (void)removingNotes:(Notes*)notes;
+- (void)saveNotes;
 
 @end

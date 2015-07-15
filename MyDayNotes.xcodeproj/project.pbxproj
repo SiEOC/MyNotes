@@ -14,10 +14,10 @@
 		06CFD7901B568680001BC735 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CFD78E1B568680001BC735 /* LaunchScreen.xib */; };
 		06CFD79C1B568680001BC735 /* MyDayNotesTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD79B1B568680001BC735 /* MyDayNotesTests.m */; };
 		06CFD7A71B5686FD001BC735 /* MyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7A61B5686FD001BC735 /* MyListViewController.m */; };
-		06CFD7AA1B568727001BC735 /* MyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7A91B568727001BC735 /* MyDataSource.m */; };
 		06CFD7AD1B568776001BC735 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7AC1B568776001BC735 /* DetailViewController.m */; };
 		06CFD7B01B568889001BC735 /* Notes.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7AF1B568889001BC735 /* Notes.m */; };
 		06CFD7B31B5688B5001BC735 /* NotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7B21B5688B5001BC735 /* NotesController.m */; };
+		06CFD7B81B5696F6001BC735 /* MyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7B71B5696F6001BC735 /* MyDataSource.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,14 +45,14 @@
 		06CFD79B1B568680001BC735 /* MyDayNotesTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyDayNotesTests.m; sourceTree = "<group>"; };
 		06CFD7A51B5686FD001BC735 /* MyListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyListViewController.h; sourceTree = "<group>"; };
 		06CFD7A61B5686FD001BC735 /* MyListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyListViewController.m; sourceTree = "<group>"; };
-		06CFD7A81B568727001BC735 /* MyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataSource.h; sourceTree = "<group>"; };
-		06CFD7A91B568727001BC735 /* MyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataSource.m; sourceTree = "<group>"; };
 		06CFD7AB1B568776001BC735 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		06CFD7AC1B568776001BC735 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		06CFD7AE1B568889001BC735 /* Notes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notes.h; sourceTree = "<group>"; };
 		06CFD7AF1B568889001BC735 /* Notes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notes.m; sourceTree = "<group>"; };
 		06CFD7B11B5688B5001BC735 /* NotesController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NotesController.h; sourceTree = "<group>"; };
 		06CFD7B21B5688B5001BC735 /* NotesController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NotesController.m; sourceTree = "<group>"; };
+		06CFD7B61B5696F6001BC735 /* MyDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDataSource.h; sourceTree = "<group>"; };
+		06CFD7B71B5696F6001BC735 /* MyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataSource.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,12 +94,11 @@
 		06CFD77E1B568680001BC735 /* MyDayNotes */ = {
 			isa = PBXGroup;
 			children = (
-				06CFD7831B568680001BC735 /* AppDelegate.h */,
-				06CFD7841B568680001BC735 /* AppDelegate.m */,
+				06CFD7B51B569398001BC735 /* AppDelegate */,
 				06CFD7A51B5686FD001BC735 /* MyListViewController.h */,
 				06CFD7A61B5686FD001BC735 /* MyListViewController.m */,
-				06CFD7A81B568727001BC735 /* MyDataSource.h */,
-				06CFD7A91B568727001BC735 /* MyDataSource.m */,
+				06CFD7B61B5696F6001BC735 /* MyDataSource.h */,
+				06CFD7B71B5696F6001BC735 /* MyDataSource.m */,
 				06CFD7AB1B568776001BC735 /* DetailViewController.h */,
 				06CFD7AC1B568776001BC735 /* DetailViewController.m */,
 				06CFD7861B568680001BC735 /* ViewController.h */,
@@ -139,6 +138,15 @@
 				06CFD79A1B568680001BC735 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		06CFD7B51B569398001BC735 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				06CFD7831B568680001BC735 /* AppDelegate.h */,
+				06CFD7841B568680001BC735 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +250,9 @@
 			files = (
 				06CFD7881B568680001BC735 /* ViewController.m in Sources */,
 				06CFD7B31B5688B5001BC735 /* NotesController.m in Sources */,
+				06CFD7B81B5696F6001BC735 /* MyDataSource.m in Sources */,
 				06CFD7851B568680001BC735 /* AppDelegate.m in Sources */,
 				06CFD7A71B5686FD001BC735 /* MyListViewController.m in Sources */,
-				06CFD7AA1B568727001BC735 /* MyDataSource.m in Sources */,
 				06CFD7821B568680001BC735 /* main.m in Sources */,
 				06CFD7B01B568889001BC735 /* Notes.m in Sources */,
 				06CFD7AD1B568776001BC735 /* DetailViewController.m in Sources */,
