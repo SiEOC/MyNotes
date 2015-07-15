@@ -78,7 +78,20 @@
 }
 
 
+-(void)navEditbutton
+{
+    NSLog(@"Edit Button");
+}
 
+-(void)navAddButton
+{
+  NSLog(@"Add Button");
+}
+
+-(void)navTitleGestureMethod
+{
+    NSLog(@"Title Gesture");
+}
 
 
 

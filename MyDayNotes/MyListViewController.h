@@ -13,8 +13,11 @@
 
 @property (nonatomic,strong)MyListViewController *listView;
 
+- (void)navEditbutton;
 
+- (void)navAddButton;
 
+- (void)navTitleGestureMethod;
 
 
 @end
