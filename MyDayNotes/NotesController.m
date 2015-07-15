@@ -60,12 +60,12 @@ static NSString* const AllNotesKey = @"allNotes";
 - (void)saveToPersistentStorage  /*  See Here  */
 {
     NSMutableArray *noteDictionary = [NSMutableArray new];
-    for (Notes *notes in self.entries) //Ref here
+//    for (Notes *notes in self.entries)
     {
 //        [noteDictionary addObject:[notes dictionaryRepresentation]];
     }
     
-    [noteDictionary writeToFile:self.pathToFile atomically:YES];
+//    [noteDictionary writeToFile:self.pathToFile atomically:YES];
 }
 
 //- (void)loadFromPersistentStorage
@@ -84,7 +84,7 @@ static NSString* const AllNotesKey = @"allNotes";
 
 #pragma mark - Update
 
-- (void)save
+- (void)saveNotes
 {
     [self saveToPersistentStorage];
 }

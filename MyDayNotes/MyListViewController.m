@@ -7,6 +7,7 @@
 //
 
 #import "MyListViewController.h"
+#import "DetailViewController.h"
 
 @interface MyListViewController ()
 
@@ -15,32 +16,51 @@
 @implementation MyListViewController
 
 
-- (void)viewDidAppear:(BOOL)animated  // As of rght Now view Did load is not 'respndig'  "viee will appear is.. :)
+- (void)viewDidAppear:(BOOL)animated
 {
     
-    // Q: Movies appear after detail view...,
+    /*    Gesture Methdods Title   */
     
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStylePlain target:self action:nil];
-    [self.navigationItem setLeftBarButtonItem:leftItem animated:YES];
-    
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithTitle:@"Add" style:UIBarButtonItemStylePlain target:self action:nil];
-    [self.navigationItem setRightBarButtonItem:rightItem animated:YES];
-    
-    
-    self.navigationController.navigationBar.tintColor = [UIColor redColor];
-    [self.navigationController.navigationBar setBarTintColor:[UIColor whiteColor]];
-    [self.navigationController.navigationBar setTranslucent:NO]; 
-    
-    
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] init];
-    UILabel *titleView = [UILabel new];
-    titleView.text = @"My Notess";
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleGestureLabelMethod)];
+    UILabel * titleView = [UILabel new];
+    titleView.text = @"My Notes";
+    titleView.textColor = [UIColor redColor];
     [titleView sizeToFit];
     titleView.userInteractionEnabled = YES;
     [titleView addGestureRecognizer:tapGesture];
     
     self.navigationItem.titleView = titleView;
     [self.navigationController.navigationBar setTranslucent:NO];
+    
+    
+    /* Adding Butotons To  Left Nav Bar Item @ View Controller  */
+    
+    UIBarButtonItem *removeButton = [[UIBarButtonItem alloc]
+                                     initWithTitle:@"Edit"
+                                     style:UIBarButtonItemStylePlain
+                                     target:self
+                                     action:@selector(leftMethod)];
+    
+    [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
+    
+    
+    /*   Right Nav Button  @ View Controller  */
+    
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
+                                  initWithTitle:@"Add"
+                                  style:UIBarButtonItemStylePlain
+                                  target:self
+                                  action:@selector(rightMethod)];
+    
+    [self.navigationItem setRightBarButtonItem:addButton animated:YES];
+    
+    
+    /*      Color For View Controller */
+    
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
+    
+    
     
 }
 - (void)viewDidLoad
@@ -54,7 +74,14 @@
 - (void)viewWillAppear:(BOOL)animated
 {
 //    [self.listView reloadData]; addDataSource
+    
 }
+
+
+
+
+
+
 
 
 

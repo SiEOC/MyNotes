@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MyListViewController : UIViewController
+@interface MyListViewController : UIViewController  <UITableViewDelegate>
 
 @property (nonatomic,strong)MyListViewController *listView;
 
