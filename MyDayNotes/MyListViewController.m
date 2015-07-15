@@ -21,7 +21,7 @@
     
     /*    Gesture Methdods Title   */
     
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleGestureLabelMethod)];
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
     titleView.text = @"My Notes";
     titleView.textColor = [UIColor redColor];
@@ -39,7 +39,7 @@
                                      initWithTitle:@"Edit"
                                      style:UIBarButtonItemStylePlain
                                      target:self
-                                     action:@selector(leftMethod)];
+                                     action:@selector(navEditbutton)];
     
     [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
     
@@ -50,7 +50,7 @@
                                   initWithTitle:@"Add"
                                   style:UIBarButtonItemStylePlain
                                   target:self
-                                  action:@selector(rightMethod)];
+                                  action:@selector(navAddButton)];
     
     [self.navigationItem setRightBarButtonItem:addButton animated:YES];
     
