@@ -23,7 +23,7 @@
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
-    titleView.text = @"My Notes";
+    titleView.text = @"VC My Notes";
     titleView.textColor = [UIColor redColor];
     [titleView sizeToFit];
     titleView.userInteractionEnabled = YES;
@@ -76,7 +76,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    [self reloadData];
+
     
 }
 

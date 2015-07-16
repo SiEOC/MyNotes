@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "MyListViewController.h"
 #import "NotesController.h"
+#import "CameraViewController.h"
 
 @interface DetailViewController ()
 
@@ -26,7 +27,7 @@
   
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
-    titleView.text = @"Notes";
+    titleView.text = @"Detail Notes";
     titleView.textColor = [UIColor redColor];
     [titleView sizeToFit];
     titleView.userInteractionEnabled = YES;
@@ -87,19 +88,17 @@
     }
     else
     {
-        self.detailNotes = [[NotesController sharedInstance] createNotesWithTitle:self.titleTextField.text bodyText:self.bodyTextField];
+        self.detailNotes = [[NotesController sharedInstance] createNotesWithTitle:self.titleTextField.text bodyText:self.bodyTextField.text];
         
                             [[NotesController sharedInstance] saveNotes];
         
     }
     
     NSLog(@"Back & Save Button");  /* ActionSheet or drop down ,Remove.. */
-    
-    
-    [self dismissViewControllerAnimated:self completion:nil];
-    
-    // PResent it? or Dismiss?
-    
+
+
+    [self.navigationController popToRootViewControllerAnimated:YES];
+
     
 
 }
@@ -122,10 +121,12 @@
 -(void)addPhoto
 {
     NSLog(@"Add Image Button");
+
+    CameraViewController *toCameraVC = [[CameraViewController alloc] init];
     
-    MyListViewController *toMyListVC = [[MyListViewController alloc] init];
+    [self.navigationController pushViewController:toCameraVC animated:TRUE];
     
-    [self presentViewController:toMyListVC animated:YES completion:nil];
+    
 }
 
 -(void)newGestureMethod
