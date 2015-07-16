@@ -10,43 +10,45 @@
 #import "MyListViewController.h"
 #import "NotesController.h"
 #import "CameraViewController.h"
+#import "MyDataSource.h"
 
 @interface DetailViewController ()
 
-
+@property (strong, nonatomic) MyDataSource *dataSource;
 
 @end
 
 @implementation DetailViewController
 
+
 - (void)viewDidLoad
 {
-    
     [super viewDidLoad];
-  
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
-    UILabel * titleView = [UILabel new];
-    titleView.text = @"Notes";
-    titleView.textColor = [UIColor redColor];
-    [titleView sizeToFit];
-    titleView.userInteractionEnabled = YES;
-    [titleView addGestureRecognizer:tapGesture];
     
-    self.navigationItem.titleView = titleView;
+    
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(titleMethod)];
+    UILabel *labelForNavigationBarTitle = [UILabel new];
+    labelForNavigationBarTitle.text = @"Notes";
+    labelForNavigationBarTitle.textColor = [UIColor redColor];
+    [labelForNavigationBarTitle sizeToFit];
+    labelForNavigationBarTitle.userInteractionEnabled = YES;
+    [labelForNavigationBarTitle addGestureRecognizer:tapGesture];
+    
+    self.navigationItem.titleView = labelForNavigationBarTitle;
     [self.navigationController.navigationBar setTranslucent:NO];
-
-  
+    
+    
     /* Adding Butotons To  Left Nav Bar Item @ View Controller  */
     
     UIBarButtonItem *removeButton = [[UIBarButtonItem alloc]
-                                      initWithTitle:@"Done"
-                                      style:UIBarButtonItemStylePlain
-                                      target:self
-                                      action:@selector(saveDone)];
+                                     initWithTitle:@"Done"
+                                     style:UIBarButtonItemStylePlain
+                                     target:self
+                                     action:@selector(saveDone)];
     
     [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
     
-
+    
     /*   Right Nav Button  @ View Controller  */
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
@@ -57,15 +59,21 @@
     
     [self.navigationItem setRightBarButtonItem:addButton animated:YES];
     
-
+    
     /*      Color For View Controller */
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
     
-
+    [self updateWithNotes:self.propertyInstanceOfNotesClass];
     
-    [self updateWithNotes:self.detailNotes];
+    UITableView *tbdtvc = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+    
+    self.dataSource = [MyDataSource new];
+    tbdtvc.dataSource = self.dataSource;
+    
+    
+    [self.view addSubview:tbdtvc];
     
 }
 
@@ -79,31 +87,29 @@
 
 -(void)saveDone
 {
-    if (self.detailNotes)
+    if (self.propertyInstanceOfNotesClass)
     {
-        self.detailNotes.title = self.titleTextField.text;
-        self.detailNotes.bodyText = self.bodyTextField.text;
-        self.detailNotes.timestamp = [NSDate date]; // Else it will not be legit
+        self.propertyInstanceOfNotesClass.title = self.titleTextField.text;
+        self.propertyInstanceOfNotesClass.bodyText = self.bodyTextField.text;
+        self.propertyInstanceOfNotesClass.timestamp = [NSDate date]; // Else it will not be legit
     }
     else
     {
-        self.detailNotes = [[NotesController sharedInstance] createNotesWithTitle:self.titleTextField.text bodyText:self.bodyTextField.text];
+        self.propertyInstanceOfNotesClass = [[NotesController sharedInstance] createNotesWithTitle:self.titleTextField.text bodyText:self.bodyTextField.text];
         
                             [[NotesController sharedInstance] saveNotes];
         
     }
     
-    NSLog(@"Back & Save Button");  /* ActionSheet or drop down ,Remove.. */
-
+    NSLog(@"Back & Save Button");
 
     [self.navigationController popToRootViewControllerAnimated:YES];
-
-    
 
 }
 
 -(void)removeNotesWritten
 {
+    self.titleTextField.textColor = [UIColor yellowColor]; //Test Color
     self.titleTextField.text = @"";
     self.title = @"";
     self.bodyTextField.text = @"";
@@ -128,7 +134,7 @@
     
 }
 
--(void)newGestureMethod
+-(void)titleMethod
 {
     NSLog(@"Title Gesture");
 }

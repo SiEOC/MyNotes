@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 
 
-@interface MyListViewController : UIViewController  <UITableViewDelegate>
+@interface MyListViewController : UIViewController 
 
 @property (nonatomic,strong)MyListViewController *listView;
+
+
+
 
 - (void)navEditbutton:(UITableViewCell *)cell;
 

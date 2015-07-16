@@ -14,17 +14,17 @@
 
 @property (nonatomic,strong)UITextField *titleTextField;
 @property (nonatomic, strong) UITextField *bodyTextField;
-@property (strong, nonatomic) Notes *detailNotes;
+@property (strong, nonatomic) Notes *propertyInstanceOfNotesClass;
 
 
 -(void)removeNotesWritten;
 
-- (void)updateWithNotes:(Notes *)detailNotes;
+- (void)updateWithNotes:(Notes *)propertyInstanceOfNotesClass;
 
 - (void)saveDone;
 
 - (void)addPhoto;
 
-- (void)newGestureMethod;
+- (void)titleMethod;
 
 @end
