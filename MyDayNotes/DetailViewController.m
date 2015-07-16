@@ -13,8 +13,7 @@
 
 @interface DetailViewController ()
 
-@property (nonatomic,strong)UITextField *titleTextField;
-@property (nonatomic, strong) UITextField *bodyTextField;
+
 
 @end
 
@@ -105,9 +104,9 @@
 
 -(void)removeNotesWritten
 {
-    self.titleTextField = @"";
+    self.titleTextField.text = @"";
     self.title = @"";
-    self.bodyTextField = @"";
+    self.bodyTextField.text = @"";
     
 }
 

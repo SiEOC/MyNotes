@@ -12,7 +12,8 @@
 @interface DetailViewController : UIViewController
 
 
-
+@property (nonatomic,strong)UITextField *titleTextField;
+@property (nonatomic, strong) UITextField *bodyTextField;
 @property (strong, nonatomic) Notes *detailNotes;
 
 

@@ -68,7 +68,9 @@ static NSString* const AllNotesKey = @"allNotes";
     
     NSMutableArray *mutableNotes = self.notesArray.mutableCopy;   /*  See Here  */
     [mutableNotes removeObject:notes];
-#warning ReadOnly Was Notes Array. 
+    
+
+    
     self.notesArray = mutableNotes;
     [self saveToPersistentStorage];
 }

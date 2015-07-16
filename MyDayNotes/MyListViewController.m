@@ -18,21 +18,6 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-    
-    
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.listView = self;
-    
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    
     /*    Gesture Methdods Title   */
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
@@ -73,11 +58,16 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
-
     
 }
 
-
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+//    [self.view addSubview:]
+    
+}
 
 
 
