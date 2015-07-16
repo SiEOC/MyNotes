@@ -19,6 +19,8 @@
 		06CFD7B31B5688B5001BC735 /* NotesController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7B21B5688B5001BC735 /* NotesController.m */; };
 		06CFD7B81B5696F6001BC735 /* MyDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7B71B5696F6001BC735 /* MyDataSource.m */; };
 		06CFD7F91B581F17001BC735 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7F81B581F17001BC735 /* CameraViewController.m */; };
+		06CFD7FD1B582D95001BC735 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7FC1B582D95001BC735 /* TableViewCell.m */; };
+		06CFD8001B5831CE001BC735 /* CameraDataSourcce.m in Sources */ = {isa = PBXBuildFile; fileRef = 06CFD7FF1B5831CE001BC735 /* CameraDataSourcce.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,10 @@
 		06CFD7B71B5696F6001BC735 /* MyDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDataSource.m; sourceTree = "<group>"; };
 		06CFD7F71B581F17001BC735 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		06CFD7F81B581F17001BC735 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		06CFD7FB1B582D95001BC735 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		06CFD7FC1B582D95001BC735 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		06CFD7FE1B5831CE001BC735 /* CameraDataSourcce.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDataSourcce.h; sourceTree = "<group>"; };
+		06CFD7FF1B5831CE001BC735 /* CameraDataSourcce.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDataSourcce.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,8 +210,12 @@
 		06CFD7FA1B581F31001BC735 /* CameraVC */ = {
 			isa = PBXGroup;
 			children = (
+				06CFD7FE1B5831CE001BC735 /* CameraDataSourcce.h */,
+				06CFD7FF1B5831CE001BC735 /* CameraDataSourcce.m */,
 				06CFD7F71B581F17001BC735 /* CameraViewController.h */,
 				06CFD7F81B581F17001BC735 /* CameraViewController.m */,
+				06CFD7FB1B582D95001BC735 /* TableViewCell.h */,
+				06CFD7FC1B582D95001BC735 /* TableViewCell.m */,
 			);
 			name = CameraVC;
 			sourceTree = "<group>";
@@ -312,7 +322,9 @@
 				06CFD7881B568680001BC735 /* ViewController.m in Sources */,
 				06CFD7B31B5688B5001BC735 /* NotesController.m in Sources */,
 				06CFD7B81B5696F6001BC735 /* MyDataSource.m in Sources */,
+				06CFD7FD1B582D95001BC735 /* TableViewCell.m in Sources */,
 				06CFD7851B568680001BC735 /* AppDelegate.m in Sources */,
+				06CFD8001B5831CE001BC735 /* CameraDataSourcce.m in Sources */,
 				06CFD7A71B5686FD001BC735 /* MyListViewController.m in Sources */,
 				06CFD7821B568680001BC735 /* main.m in Sources */,
 				06CFD7F91B581F17001BC735 /* CameraViewController.m in Sources */,

@@ -14,7 +14,7 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return nil;
+    return 1;
 }
 
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView
@@ -22,11 +22,12 @@
     return nil;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
     Notes *instanceNotes = [NotesController sharedInstance].notesArray[indexPath.row];
     
-   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyID"];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyID"];
     cell.textLabel.text = instanceNotes.title;
     
     return cell;

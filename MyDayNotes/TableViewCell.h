@@ -1,5 +1,5 @@
 //
-//  CameraViewController.h
+//  TableViewCell.h
 //  MyDayNotes
 //
 //  Created by Skyler Clark on 7/16/15.
@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "TableViewCell.h"
-@interface CameraViewController : UIViewController 
+
+@interface TableViewCell : UITableViewCell
+@property (nonatomic)UILabel *descriptionLabel;
 
 @end

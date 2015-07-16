@@ -16,6 +16,20 @@
 @implementation MyListViewController
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    
+    
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.listView = self;
+    
+}
+
 - (void)viewDidAppear:(BOOL)animated
 {
     
@@ -59,26 +73,12 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     [self.navigationController.navigationBar setBarTintColor:[UIColor blackColor]];
-    
-    
-    
-}
-
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.listView = self;
-
-}
-
-- (void)viewWillAppear:(BOOL)animated
-{
 
     
 }
+
+
+
 
 
 -(void)navEditbutton:(UITableViewCell *)cell
