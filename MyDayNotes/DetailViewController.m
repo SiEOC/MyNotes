@@ -42,7 +42,8 @@
                                       initWithTitle:@"Done"
                                       style:UIBarButtonItemStylePlain
                                       target:self
-                                      action:@selector(navEditbutton)];
+                                      action:@selector(saveDone)];
+    
     [self.navigationItem setLeftBarButtonItem:removeButton animated:YES];
     
 
@@ -52,7 +53,7 @@
                                   initWithTitle:@"Photo+"
                                   style:UIBarButtonItemStylePlain
                                   target:self
-                                  action:@selector(navAddButton)];
+                                  action:@selector(addPhoto)];
     
     [self.navigationItem setRightBarButtonItem:addButton animated:YES];
     
@@ -96,6 +97,10 @@
     
     
     [self dismissViewControllerAnimated:self completion:nil];
+    
+    // PResent it? or Dismiss?
+    
+    
 
 }
 

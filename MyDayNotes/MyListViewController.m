@@ -63,6 +63,9 @@
     
     
 }
+
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -73,7 +76,7 @@
 
 - (void)viewWillAppear:(BOOL)animated
 {
-//    [self.reloadData];
+//    [self reloadData];
     
 }
 
@@ -92,9 +95,9 @@
   NSLog(@"Add Button");
     
     
-    DetailViewController *toDetailVC = [[DetailViewController alloc] init];
-    
-    [self.listView presentViewController:toDetailVC animated:YES completion:nil];
+    DetailViewController *toDetailVC = [[DetailViewController alloc] init]; //Created instance of
+    [self.navigationController pushViewController:toDetailVC animated:YES]; // Send to View
+
 }
 
 -(void)navTitleGestureMethod
