@@ -27,7 +27,7 @@
   
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
-    titleView.text = @"Detail Notes";
+    titleView.text = @"Notes";
     titleView.textColor = [UIColor redColor];
     [titleView sizeToFit];
     titleView.userInteractionEnabled = YES;

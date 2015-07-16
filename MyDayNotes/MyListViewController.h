@@ -13,7 +13,7 @@
 
 @property (nonatomic,strong)MyListViewController *listView;
 
-- (void)navEditbutton;
+- (void)navEditbutton:(UITableViewCell *)cell;
 
 - (void)navAddButton;
 

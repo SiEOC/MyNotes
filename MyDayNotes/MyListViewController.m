@@ -23,7 +23,7 @@
     
     UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(navTitleGestureMethod)];
     UILabel * titleView = [UILabel new];
-    titleView.text = @"VC My Notes";
+    titleView.text = @"My Notes";
     titleView.textColor = [UIColor redColor];
     [titleView sizeToFit];
     titleView.userInteractionEnabled = YES;
@@ -36,7 +36,7 @@
     /* Adding Butotons To  Left Nav Bar Item @ View Controller  */
     
     UIBarButtonItem *removeButton = [[UIBarButtonItem alloc]
-                                     initWithTitle:@"Edit"
+                                     initWithTitle:@"Note-"
                                      style:UIBarButtonItemStylePlain
                                      target:self
                                      action:@selector(navEditbutton)];
@@ -47,7 +47,7 @@
     /*   Right Nav Button  @ View Controller  */
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"Add"
+                                  initWithTitle:@"Note+"
                                   style:UIBarButtonItemStylePlain
                                   target:self
                                   action:@selector(navAddButton)];
@@ -81,13 +81,11 @@
 }
 
 
--(void)navEditbutton
+-(void)navEditbutton:(UITableViewCell *)cell
 {
     NSLog(@"Edit Button");
     
-    //  ActionSheet or drop down
-    
-    //  Remove Entry
+
 }
 
 -(void)navAddButton
