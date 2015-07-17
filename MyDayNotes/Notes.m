@@ -22,7 +22,8 @@
     return self;
 }
 
-- (NSDictionary *)dictionaryRepresentation {
+- (NSDictionary *)myMethodWithDictionaryKeys
+{
     NSDictionary *dictionary = @{
                                  TitleKey : self.title,
                                  BodyTextKey : self.bodyText,

@@ -46,11 +46,11 @@ static NSString* const AllNotesKey = @"allNotes";
         return;
     }
     
-    NSMutableArray *mutableManyNotes = self.notesArray.mutableCopy;
+    NSMutableArray *mutableManyNotes = self.iWasGiven_Array.mutableCopy;
     
     [mutableManyNotes addObject:notes];
     
-    self.notesArray = mutableManyNotes;
+    self.iWasGiven_Array = mutableManyNotes;
     
     [self saveToPersistentStorage];
 }
@@ -66,12 +66,12 @@ static NSString* const AllNotesKey = @"allNotes";
         return;
     }
     
-    NSMutableArray *mutableNotes = self.notesArray.mutableCopy;   /*  See Here  */
+    NSMutableArray *mutableNotes = self.iWasGiven_Array.mutableCopy;   /*  See Here  */
     [mutableNotes removeObject:notes];
     
 
     
-    self.notesArray = mutableNotes;
+    self.iWasGiven_Array = mutableNotes;
     [self saveToPersistentStorage];
 }
 
@@ -83,15 +83,15 @@ static NSString* const AllNotesKey = @"allNotes";
 - (void)loadFromPersistentStorage
 {
     
-    NSArray *notesTakenDictionaries = [NSArray arrayWithContentsOfFile:self.pathToFile];
-    NSMutableArray *secondArrayMutable = [NSMutableArray new];
+    NSArray *fullPathArray = [NSArray arrayWithContentsOfFile:self.pathToFile];
+    NSMutableArray *theGiveMeArray = [NSMutableArray new];
     
     
-    for (NSDictionary *notesM in notesTakenDictionaries)
+    for (NSDictionary *theNotes in fullPathArray)
     {
-        [secondArrayMutable addObject:[[Notes alloc] initWithDictionary:notesM]];
+        [theGiveMeArray addObject:[[Notes alloc] initWithDictionary:theNotes]];
     }
-    self.notesArray = secondArrayMutable;
+    self.iWasGiven_Array = theGiveMeArray;
 }
 
 - (void)saveNotes

@@ -10,14 +10,14 @@
 #import "Notes.h"
 
 @interface NotesController : NSObject
-@property (strong, nonatomic,) NSArray *notesArray;
+@property (strong, nonatomic,) NSArray *iWasGiven_Array;
 
 + (NotesController *)sharedInstance;
 
 - (Notes *)createNotesWithTitle:(NSString *)title bodyText:(NSString *)bodyText;
 
 - (void)addingNotes:(Notes *)notes;
-- (void)removingNotes:(Notes*)notes;
+- (void)removingNotes:(Notes *)notes;
 - (void)saveNotes;
 
 @end

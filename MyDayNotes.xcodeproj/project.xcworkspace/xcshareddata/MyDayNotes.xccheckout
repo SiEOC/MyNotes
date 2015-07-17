@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>5AED0DD1-BC5A-42FA-B9AB-9C369EEB6E60</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>MyDayNotes</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>42450B3F535393DE9F27D181146943180F01F959</key>
 		<string>https://github.com/SiEOC/MyNotes.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>MyDayNotes.xcodeproj/project.xcworkspace</string>
+	<string>MyDayNotes.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>42450B3F535393DE9F27D181146943180F01F959</key>

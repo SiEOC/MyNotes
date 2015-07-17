@@ -25,7 +25,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    Notes *instanceNotes = [NotesController sharedInstance].notesArray[indexPath.row];
+    Notes *instanceNotes = [NotesController sharedInstance].iWasGiven_Array[indexPath.row];
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MyID"];
     cell.textLabel.text = instanceNotes.title;
@@ -35,7 +35,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [NotesController sharedInstance].notesArray.count;
+    return [NotesController sharedInstance].iWasGiven_Array.count;
 }
 
 @end

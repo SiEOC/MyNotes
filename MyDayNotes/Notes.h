@@ -20,6 +20,6 @@ static NSString * const TimeStampKey = @"timestamp";
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 
-- (NSDictionary *)dictionaryRepresentation;
+- (NSDictionary *)myMethodWithDictionaryKeys;
 
 @end
